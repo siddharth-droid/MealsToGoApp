@@ -1,17 +1,26 @@
-import React from "react";
-import { View } from "react-native";
 import styled from "styled-components/native";
 
-const TopSmall = styled.View`
-  margintop: 4px;
+const sizeVariant = {
+  small:1,
+  medium:2,
+  large:3,
+}
+
+const positionVariant = {
+    top:'marginTop',
+    left:'marginLeft',
+    right:'marginRight',
+    bottom:'marginBottom',
+}
+
+const getVariant = (position,size) => `${positionVariant[position]}:${sizeVariant[size]}`;
+
+export const Spacer = styled.View`
+${(position,size) => getVariant(position,size)}
 `;
 
-const TopMedium = styled.View`
-  margintop: 4px;
-`;
 
-export const spacer = ({ variant }) => {
-  switch (variant) {
-    default:
-  }
-};
+Spacer.defaultprops = {
+  position = 'top',
+  size = 'small'
+}
