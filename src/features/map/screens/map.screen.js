@@ -4,7 +4,7 @@ import styled from "styled-components/native";
 import { Search } from "../../restaurants/components/search.component";
 
 import { LocationContext } from "../../../services/location/location.context";
-import { RestaurantContext } from "../../../services/restaurants/restaurants.context";
+import { RestaurantsContext } from "../../../services/restaurants/restaurants.context";
 
 const Map = styled(MapView)`
   height: 100%;
@@ -13,11 +13,11 @@ const Map = styled(MapView)`
 
 export const MapScreen = () => {
   const { location } = useContext(LocationContext);
-  const { restaurant } = useContext(RestaurantContext);
-
-  const { lat, lng, viewport } = location;
+  const { restaurants = [] } = useContext(RestaurantsContext);
 
   const [latDelta, setLatDelta] = useState(0);
+
+  const { lat, lng, viewport } = location;
 
   useEffect(() => {
     const northeastLat = viewport.northeast.lat;
@@ -36,7 +36,7 @@ export const MapScreen = () => {
           longitudeDelta: 0.02,
         }}
       >
-        {restaurant.map((restaurant) => {
+        {restaurants.map((restaurant) => {
           return null;
         })}
       </Map>
