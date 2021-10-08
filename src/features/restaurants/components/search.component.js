@@ -1,6 +1,7 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import styled from "styled-components/native";
 import { Searchbar } from "react-native-paper";
+
 import { LocationContext } from "../../../services/location/location.context";
 
 const SearchContainer = styled.View`
@@ -10,11 +11,9 @@ const SearchContainer = styled.View`
 export const Search = ({ isFavouritesToggled, onFavouritesToggle }) => {
   const { keyword, search } = useContext(LocationContext);
   const [searchKeyword, setSearchKeyword] = useState(keyword);
-
   useEffect(() => {
     setSearchKeyword(keyword);
   }, [keyword]);
-
   return (
     <SearchContainer>
       <Searchbar
