@@ -1,5 +1,5 @@
 import styled from "styled-components/native";
-
+import { colors } from "../../../infrastructure/theme/colors";
 export const AccountBackground = styled.ImageBackground.attrs({
   source: require("../../../../assets/home_bg.jpg"),
 })`
