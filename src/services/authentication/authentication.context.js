@@ -22,7 +22,9 @@ export const AuthenticationContextProvider = ({ children }) => {
   };
 
   return (
-    <AuthenticationContext.Provider value={{ user, isLoading, error, onLogin }}>
+    <AuthenticationContext.Provider
+      value={{ isAuthenticated: !!user, isLoading, error, onLogin }}
+    >
       {children}
     </AuthenticationContext.Provider>
   );
