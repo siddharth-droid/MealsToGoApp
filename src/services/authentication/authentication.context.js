@@ -21,6 +21,8 @@ export const AuthenticationContextProvider = ({ children }) => {
       });
   };
 
+  const onRegister
+
   return (
     <AuthenticationContext.Provider
       value={{ isAuthenticated: !!user, isLoading, error, onLogin }}
