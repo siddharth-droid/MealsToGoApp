@@ -9,9 +9,9 @@ export const AuthenticationContextProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [error, setError] = useState([]);
 
-  firebase.auth().onAuthStateChanged((user) => {
-    if (user) {
-      setUser(user);
+  firebase.auth().onAuthStateChanged((usr) => {
+    if (usr) {
+      setUser(usr);
       setIsLoading(false);
     } else {
       setIsLoading(false);
