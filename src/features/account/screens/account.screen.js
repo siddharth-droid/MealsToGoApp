@@ -12,7 +12,6 @@ import {
   Title,
   AnimationWrapper,
 } from "../components/account.styles";
-import styled from "styled-components/native";
 
 export const AccountScreen = ({ navigation }) => {
   return (
